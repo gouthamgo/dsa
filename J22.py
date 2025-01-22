@@ -20,7 +20,6 @@ class Solution:
 
          
 
-'''
 
 
 def hasDuplicate(arr):
@@ -37,3 +36,13 @@ print(hasDuplicate(nums))
 
 
 
+'''
+
+
+# best approach can be 
+
+def hasDuplicate(nums):
+    return len(nums) != len(set(nums))
+
+nums = [1, 2, 3, 3]
+print(hasDuplicate(nums))
