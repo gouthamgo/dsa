@@ -233,3 +233,14 @@ const userss = {
     { id: 's3', name: 'Charlie', major: 'Computer Science', gpa: 3.9 },
     { id: 's4', name: 'Diana', major: 'Mathematics', gpa: 3.5 }
   ];
+
+
+
+  console.log("\n Student GPA:");
+  students.forEach(student => {
+    console.log(`${student.name} ${student.gpa}`)
+  })
+
+  
+
+  
