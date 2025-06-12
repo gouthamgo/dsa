@@ -37,3 +37,10 @@ for key,value in catgeories.items():
 
 for item in garments:
     print(f"{item}")
+
+
+
+
+
+
+
