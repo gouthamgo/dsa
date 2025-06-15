@@ -5,3 +5,4 @@ for i, label in enumerate(intent):
 
 lable2id = {label: i for i,label in enumerate(intent)}
 print(lable2id)
+
