@@ -23,3 +23,19 @@ def count_letter(word):
          count[letter] = count.get(letter,0) + 1
     return count
 print(count_letter('basic'))
+
+
+
+#  find first non repeating character in "leetcode"
+def check(s):
+    c = {}
+
+    for l in s:
+        c[l] = c.get(l,0)+1
+
+    for i,l in enumerate(s):
+        if c[l] ==1:
+            return i
+    return -1
+
+print(check("leetcodelots"))
