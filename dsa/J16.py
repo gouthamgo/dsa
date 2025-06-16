@@ -1,29 +1,25 @@
-# Variables 
+#  hashmap/dictionary patterns
 
-size = 10
-length = 1.5
+def count_letters(word):
+    count = {}
 
-product_name="Petite"
+    for letter in word:
+        if letter in count:
+            count[letter] = count[letter] + 1
+        else:
+            count[letter] = 1
+    return count 
 
-is_active= True
-check = None 
-
-# if size>10:
-#     print("greater >9")
-# elif size == 5:
-#     print("exact 5")
-# else:
-#     print("lastone")
+print(count_letters('checking'))
 
 
-# for i in range(3):
-#     print(i)
 
-# for i in range(5):
-#     if i ==2:
-#         continue
-#     if i ==4:
-#         break
-#     print(i)
+# Method 2 :
 
+def count_letter(word):
+    count = {}
 
+    for letter in word:
+         count[letter] = count.get(letter,0) + 1
+    return count
+print(count_letter('basic'))
