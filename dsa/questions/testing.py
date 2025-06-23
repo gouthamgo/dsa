@@ -56,6 +56,19 @@ print(list(map(lambda x: x * 2, nums)))
 
 print(list(map(lambda x: x % 2, nums)))
 
+names = ["a","b"]
+scores=[80,5]
+
+print(list(zip(names,scores)))
+
+for i,value in enumerate(["a","b","c"]):
+    print(i,value)
+
+words = ["cc","re","tt"]
+print(sorted(words,key=len))
+
+
+
 
 
 
