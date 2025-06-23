@@ -53,3 +53,26 @@ print(checkPalindrom('Was it a car or a cat I saw'))
 
 
 #  a two pointer technique -- need to revisie 
+
+# isalnum() - returns true for non - alpha numerice (a-z) and (0-9)
+
+
+def is_Palin(s):
+    cleaned = ""
+    for char in s:
+        if char.isalnum():
+            cleaned +=char.lower()
+            print(cleaned)
+
+    left = 0
+    right = len(cleaned) -1 
+
+    while left < right:
+        if cleaned[left] != cleaned[right]:
+            return False
+        left +=1
+        right -=1
+
+    return True
+
+print(is_Palin('race a car'))
