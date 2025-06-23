@@ -1,34 +1,17 @@
-name: Auto Merge Problems into Main
+name: Auto Merge Debug
 
 on:
   push:
     branches:
-      - problems  # Only triggers on push to the problems branch
+      - problems  # Trigger on push to 'problems' branch
 
 jobs:
-  auto-merge:
+  hello-world:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout problems branch
+      - name: Check out the repository
         uses: actions/checkout@v3
-        with:
-          ref: problems
 
-      - name: Set up Git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
-      - name: Checkout main branch
-        run: |
-          git fetch origin main
-          git checkout main
-
-      - name: Merge problems into main
-        run: |
-          git merge problems --no-ff -m "Auto merge problems into main"
-
-      - name: Push changes to main
-        run: |
-          git push origin main
+      - name: Print "Hello, World!"
+        run: echo "Hello, World!"
