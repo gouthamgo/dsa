@@ -53,3 +53,58 @@ def close(nums):
 
 print(close([-4,-2,1,4,8]))
 print(close([2,-1,1]))
+
+
+
+ # better appraoch 
+#     here i am assuming first number is the closeset and compare to other numbers 
+
+
+def close1(nums):
+    closest = nums[0]
+    for num in nums:
+        if abs(num) < abs(closest) or (abs(num) == abs(closest) and num > closest):
+            closest = num
+    return closest
+
+   
+print(close1([-4,-2,1,4,8]))
+
+
+
+'''
+Approach and Thinking
+
+    Initialization:
+    Assume the first number is the closest. This is a common pattern when searching for an optimal value in a list.
+
+    Iterative Comparison:
+    For each number, check if it's closer to zero than the current best.
+
+        Use abs() to measure distance from zero.
+
+    Tie-breaker:
+    If two numbers are equally close, pick the larger one.
+
+        This is handled by the second part of the if condition.
+
+    Single Pass:
+    The loop goes through the list once, making the solution efficient (O(n) time, O(1) space).
+
+Example Walkthrough
+
+Let's walk through nums = [2, -1, 1]:
+Iteration	num	closest	abs(num)	abs(closest)	Condition True?	New closest
+Start		2				2
+1	2	2	2	2	Yes	2
+2	-1	2	1	2	Yes	-1
+3	1	-1	1	1	Yes (tie, 1 > -1)	1
+
+
+Initialize	Start with the first element
+Loop through list	Compare each number to current best
+Use absolute value	For "distance" from zero
+Tie-breaker	Prefer the larger number
+Return result	After checking all numbers
+
+'''
