@@ -1,17 +1,19 @@
-name: Auto Merge Debug
+name: Auto-merge problems into main
 
 on:
   push:
     branches:
-      - problems  # Trigger on push to 'problems' branch
+      - problems
+
+permissions:
+  contents: write
 
 jobs:
-  hello-world:
+  merge-to-main:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v3
-
-      - name: Print "Hello, World!"
-        run: echo "Hello, World!"
+      - uses: actions/checkout@v2
+      - uses: emiliopedrollo/auto-merge@v1.2.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: 'main'
