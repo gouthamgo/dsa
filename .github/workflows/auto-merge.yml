@@ -1,19 +1,1 @@
-name: Auto-merge problems into main
 
-on:
-  push:
-    branches:
-      - problems
-
-permissions:
-  contents: write
-
-jobs:
-  merge-to-main:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: emiliopedrollo/auto-merge@v1.2.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          target_branch: 'main'
