@@ -12,7 +12,7 @@ def longest_substring(s:str):
     # i initialised an empty set 
     left = 0
     max_length = 0 
-    #  initalisation on left side and to keep track of length found 
+   
 
     for right in range(len(s)):
         while s[right] in char_set:
