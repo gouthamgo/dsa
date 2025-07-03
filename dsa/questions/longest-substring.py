@@ -9,7 +9,7 @@ Example: Input: "abcabcbb" Output: 3 ("abc")
 
 def longest_substring(s:str):
     char_set = set()
-    # i initialised an empty set 
+    
     left = 0
     max_length = 0 
    
