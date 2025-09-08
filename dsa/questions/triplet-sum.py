@@ -33,6 +33,12 @@ def triplets_sum(nums):
     return triplets
 
 
+'''
+ikkada simple ra --> first oka empty list ni tiskuntav --> final values will be stored here 
+
+
+'''
+
 
 def pair_sum_sorted(nums,start, target):
     pairs = []
@@ -56,4 +62,5 @@ def pair_sum_sorted(nums,start, target):
 
 nums = [-1, 2,-2, 1, -1, 2]
 print(triplets_sum(nums))
+
 
