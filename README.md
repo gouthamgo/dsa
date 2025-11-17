@@ -14,10 +14,10 @@
 cd neetcode
 
 # Step 1: Read this first (10 min)
-cat QUICK_START.md
+cat 00-getting-started/QUICK_START.md
 
 # Step 2: Learn pattern recognition (30 min)
-cat PATTERN_RECOGNITION.md
+cat 00-getting-started/PATTERN_RECOGNITION.md
 
 # Step 3: Solve your first problem (30 min)
 cd 01-arrays-hashing/easy
@@ -34,7 +34,7 @@ python 01-contains-duplicate.py
 dsa/
 └── neetcode/              🎯 ALL YOUR LEARNING IS HERE
     │
-    ├── 🎯 START HERE (Read These First)
+    ├── 📁 00-getting-started/    (START HERE!)
     │   ├── ABSOLUTE_BEGINNER.md     ← Never done DSA? Start here!
     │   ├── QUICK_START.md           ← Your roadmap (read first!)
     │   ├── PATTERN_RECOGNITION.md   ← Learn to identify patterns
@@ -42,18 +42,20 @@ dsa/
     │   ├── DECISION_TREE.md         ← Use when stuck
     │   └── COMPLEXITY_GUIDE.md      ← Understand Big O visually
     │
-    ├── 📋 PLANNING & TRACKING (Essential!)
+    ├── 📁 00-planning/           (Track Your Progress)
     │   ├── STUDY_PLANNER.md         ← 6-week detailed plan (2-4 hrs/day)
     │   ├── REVISION_SYSTEM.md       ← Spaced repetition system
     │   ├── PROGRESS_TRACKER.md      ← Daily/weekly tracking sheets
     │   ├── COMMON_MISTAKES.md       ← Avoid these pitfalls!
-    │   └── CHEAT_SHEET.md          ← Print and keep handy!
+    │   └── CHEAT_SHEET.md           ← Print and keep handy!
     │
-    ├── 🚀 FAANG PREPARATION (The Missing 30%!)
+    ├── 📁 00-faang-prep/         (The Missing 30% + Real Questions!)
     │   ├── FAANG_ROADMAP.md         ← Complete 4-6 month plan
     │   ├── SYSTEM_DESIGN.md         ← Master system design (visuals!)
     │   ├── BEHAVIORAL_PREP.md       ← STAR method + Amazon LPs
-    │   └── ADVANCED_STRATEGIES.md   ← Level up to Hard problems
+    │   ├── ADVANCED_STRATEGIES.md   ← Level up to Hard problems
+    │   ├── MOCK_QUESTIONS.md        ← Real FAANG questions + answers! 🔥
+    │   └── COMPANY_QUESTIONS.md     ← Company-specific patterns 🏢
     │
     ├── 📚 REFERENCE
     │   ├── README.md                ← Complete NeetCode roadmap
@@ -89,22 +91,22 @@ archive/               📦 Your old practice (saved for reference)
 
 **Morning (1 hour):**
 ```
-1. Read ABSOLUTE_BEGINNER.md
+1. Read 00-getting-started/ABSOLUTE_BEGINNER.md
    🎯 Perfect if you've never done DSA before
    🎯 Explains everything in plain English
 
-2. Read PATTERN_RECOGNITION.md
+2. Read 00-getting-started/PATTERN_RECOGNITION.md
    🎯 Learn 8 core patterns
    🎯 Memorize keyword triggers
 ```
 
 **Afternoon (1 hour):**
 ```
-3. Read HOW_TO_THINK.md
+3. Read 00-getting-started/HOW_TO_THINK.md
    🎯 Learn 7-step process
    🎯 Understand visual thinking
 
-4. Read COMPLEXITY_GUIDE.md
+4. Read 00-getting-started/COMPLEXITY_GUIDE.md
    🎯 Understand O(1) through O(2^n)
    🎯 Learn to calculate complexity
 ```
@@ -122,13 +124,13 @@ Follow the "HOW TO THINK" section in the file!
 
 ```bash
 # Open your detailed study planner
-cat STUDY_PLANNER.md
+cat 00-planning/STUDY_PLANNER.md
 
 # Start tracking your progress
-cat PROGRESS_TRACKER.md
+cat 00-planning/PROGRESS_TRACKER.md
 
 # Set up spaced repetition
-cat REVISION_SYSTEM.md
+cat 00-planning/REVISION_SYSTEM.md
 ```
 
 ---
@@ -419,15 +421,17 @@ Total: 4-6 months, 20-25 hours/week
 ```bash
 # Step 1: Master DSA first (Months 1-2)
 cd neetcode
-cat STUDY_PLANNER.md        # Follow this for 6 weeks
+cat 00-planning/STUDY_PLANNER.md        # Follow this for 6 weeks
 
 # Step 2: Add System Design (Months 3-4)
-cat SYSTEM_DESIGN.md        # 8-week parallel study plan
-cat BEHAVIORAL_PREP.md      # Polish your stories
+cat 00-faang-prep/SYSTEM_DESIGN.md     # 8-week parallel study plan
+cat 00-faang-prep/BEHAVIORAL_PREP.md   # Polish your stories
 
 # Step 3: Company-specific (Months 5-6)
-cat FAANG_ROADMAP.md        # Complete 4-6 month timeline
-cat ADVANCED_STRATEGIES.md  # Level up to Hard problems
+cat 00-faang-prep/FAANG_ROADMAP.md        # Complete 4-6 month timeline
+cat 00-faang-prep/ADVANCED_STRATEGIES.md  # Level up to Hard problems
+cat 00-faang-prep/MOCK_QUESTIONS.md       # Real interview questions!
+cat 00-faang-prep/COMPANY_QUESTIONS.md    # Company-specific prep
 ```
 
 ### The Resources You Need:
@@ -437,6 +441,8 @@ cat ADVANCED_STRATEGIES.md  # Level up to Hard problems
 2. **SYSTEM_DESIGN.md** - System design made easy (with visuals!)
 3. **BEHAVIORAL_PREP.md** - STAR method + Leadership Principles
 4. **ADVANCED_STRATEGIES.md** - Hard problems & company patterns
+5. **MOCK_QUESTIONS.md** - Real FAANG questions with complete solutions! 🔥
+6. **COMPANY_QUESTIONS.md** - Google, Meta, Amazon specific patterns 🏢
 
 **Best external resources (research-backed):**
 - **Grokking System Design** ($80) - Best structured course
@@ -470,16 +476,20 @@ But you also need:
 
 ```bash
 # TODAY: Start DSA foundation
-cd neetcode && cat QUICK_START.md
+cd neetcode && cat 00-getting-started/QUICK_START.md
 
 # WEEK 3: Add behavioral prep
-cat BEHAVIORAL_PREP.md
+cat 00-faang-prep/BEHAVIORAL_PREP.md
 
 # MONTH 3: Start system design
-cat SYSTEM_DESIGN.md
+cat 00-faang-prep/SYSTEM_DESIGN.md
+
+# MONTH 4: Practice real questions
+cat 00-faang-prep/MOCK_QUESTIONS.md
+cat 00-faang-prep/COMPANY_QUESTIONS.md
 
 # MONTH 5: Follow complete roadmap
-cat FAANG_ROADMAP.md
+cat 00-faang-prep/FAANG_ROADMAP.md
 ```
 
 **Remember:**
@@ -509,11 +519,13 @@ That's it. Just read that file. It will guide you through everything else.
 **📊 What's Included:**
 - **Topics:** 17/17 Complete ✅
 - **Problems:** 150 Essential Problems ✅
-- **Master Guides:** 15 Comprehensive Guides ✅
+- **Master Guides:** 17 Comprehensive Guides ✅
 - **DSA Study Plan:** 6 weeks, 2-4 hrs/day ✅
 - **FAANG Roadmap:** 4-6 months complete plan ✅
 - **System Design:** Full guide with visuals ✅
 - **Behavioral Prep:** STAR + Leadership Principles ✅
+- **Real Interview Questions:** 6+ solved examples ✅
+- **Company-Specific Guide:** Google, Meta, Amazon patterns ✅
 - **Revision System:** Spaced repetition included ✅
 
 **🎯 Your Complete FAANG Preparation System!**
