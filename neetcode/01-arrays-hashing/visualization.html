@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays & Hashing - Interactive Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .demo-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .demo-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .demo-section p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        button {
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .visualization {
+            min-height: 200px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px dashed #ddd;
+        }
+
+        .array-container {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .array-item {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        .array-item.highlight {
+            background: #ff6b6b;
+            animation: pulse 0.5s ease;
+        }
+
+        .array-item.found {
+            background: #51cf66;
+        }
+
+        .array-index {
+            position: absolute;
+            top: -25px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hash-table {
+            display: grid;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .hash-entry {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f1f3f5;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            animation: slideIn 0.3s ease;
+        }
+
+        .hash-key {
+            font-weight: bold;
+            color: #667eea;
+            min-width: 120px;
+        }
+
+        .hash-arrow {
+            margin: 0 15px;
+            color: #999;
+            font-size: 20px;
+        }
+
+        .hash-value {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f5ff;
+            border-radius: 8px;
+            border-left: 4px solid #1971c2;
+            font-family: 'Courier New', monospace;
+            color: #1971c2;
+            font-weight: bold;
+        }
+
+        .step-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff3bf;
+            border-radius: 8px;
+            border-left: 4px solid #fab005;
+            color: #c92a2a;
+            font-weight: 500;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Arrays & Hashing Visualizer</h1>
+        <p class="subtitle">Learn by seeing! Interactive demos for array and hash table operations</p>
+
+        <!-- Demo 1: Duplicate Detection -->
+        <div class="demo-section">
+            <h2>1️⃣ Duplicate Detection</h2>
+            <p>Watch how we use a Set to detect duplicates in O(n) time!</p>
+
+            <div class="controls">
+                <input type="text" id="dupInput" placeholder="Enter numbers (e.g., 1,2,3,1,4)" value="1,2,3,1,4">
+                <button onclick="detectDuplicates()">Find Duplicates</button>
+            </div>
+
+            <div class="visualization" id="dupViz"></div>
+        </div>
+
+        <!-- Demo 2: Frequency Counter -->
+        <div class="demo-section">
+            <h2>2️⃣ Frequency Counter</h2>
+            <p>See how hash maps count occurrences of each element!</p>
+
+            <div class="controls">
+                <input type="text" id="freqInput" placeholder="Enter text (e.g., hello)" value="hello">
+                <button onclick="countFrequency()">Count Frequencies</button>
+            </div>
+
+            <div class="visualization" id="freqViz"></div>
+        </div>
+
+        <!-- Demo 3: Two Sum -->
+        <div class="demo-section">
+            <h2>3️⃣ Two Sum (Complement Search)</h2>
+            <p>Find two numbers that add up to a target using hash map!</p>
+
+            <div class="controls">
+                <input type="text" id="twoSumInput" placeholder="Enter numbers (e.g., 2,7,11,15)" value="2,7,11,15">
+                <input type="number" id="targetInput" placeholder="Target" value="9">
+                <button onclick="solveTwoSum()">Solve Two Sum</button>
+            </div>
+
+            <div class="visualization" id="twoSumViz"></div>
+        </div>
+
+        <!-- Demo 4: Group Anagrams -->
+        <div class="demo-section">
+            <h2>4️⃣ Group Anagrams</h2>
+            <p>Group words that are anagrams of each other!</p>
+
+            <div class="controls">
+                <input type="text" id="anagramInput" placeholder="Enter words (e.g., eat,tea,tan,ate)" value="eat,tea,tan,ate,nat,bat">
+                <button onclick="groupAnagrams()">Group Anagrams</button>
+            </div>
+
+            <div class="visualization" id="anagramViz"></div>
+        </div>
+    </div>
+
+    <script>
+        // Demo 1: Duplicate Detection
+        function detectDuplicates() {
+            const input = document.getElementById('dupInput').value;
+            const nums = input.split(',').map(n => n.trim());
+            const viz = document.getElementById('dupViz');
+
+            viz.innerHTML = '<div class="step-info">🔍 Checking each number and tracking in a Set...</div>';
+
+            const seen = new Set();
+            const arrayHTML = '<div class="array-container">' +
+                nums.map((num, i) => `<div class="array-item" id="dup${i}"><span class="array-index">${i}</span>${num}</div>`).join('') +
+                '</div>';
+
+            viz.innerHTML += arrayHTML;
+            viz.innerHTML += '<h3>Set (seen):</h3><div id="seenSet"></div>';
+
+            let found = false;
+            let foundIndex = -1;
+
+            nums.forEach((num, i) => {
+                setTimeout(() => {
+                    const elem = document.getElementById(`dup${i}`);
+                    elem.classList.add('highlight');
+
+                    if (seen.has(num) && !found) {
+                        found = true;
+                        foundIndex = i;
+                        elem.classList.add('found');
+                        viz.innerHTML += `<div class="output">✅ Duplicate found! ${num} appears more than once.</div>`;
+                    } else {
+                        seen.add(num);
+                    }
+
+                    document.getElementById('seenSet').innerHTML =
+                        `<div class="hash-table">${Array.from(seen).map(s =>
+                            `<div class="hash-entry"><span class="hash-key">${s}</span></div>`
+                        ).join('')}</div>`;
+
+                    setTimeout(() => elem.classList.remove('highlight'), 500);
+
+                    if (i === nums.length - 1 && !found) {
+                        viz.innerHTML += `<div class="output">❌ No duplicates found!</div>`;
+                    }
+                }, i * 800);
+            });
+        }
+
+        // Demo 2: Frequency Counter
+        function countFrequency() {
+            const input = document.getElementById('freqInput').value;
+            const viz = document.getElementById('freqViz');
+
+            viz.innerHTML = '<div class="step-info">📊 Counting frequency of each character...</div>';
+
+            const freq = {};
+
+            for (let char of input) {
+                freq[char] = (freq[char] || 0) + 1;
+            }
+
+            const arrayHTML = '<h3>Input:</h3><div class="array-container">' +
+                input.split('').map((char, i) => `<div class="array-item">${char}</div>`).join('') +
+                '</div>';
+
+            viz.innerHTML += arrayHTML;
+
+            const hashHTML = '<h3>Frequency Map:</h3><div class="hash-table">' +
+                Object.entries(freq).map(([key, value]) =>
+                    `<div class="hash-entry">
+                        <span class="hash-key">'${key}'</span>
+                        <span class="hash-arrow">→</span>
+                        <span class="hash-value">${value}</span>
+                    </div>`
+                ).join('') +
+                '</div>';
+
+            viz.innerHTML += hashHTML;
+            viz.innerHTML += `<div class="output">✅ Found ${Object.keys(freq).length} unique characters!</div>`;
+        }
+
+        // Demo 3: Two Sum
+        function solveTwoSum() {
+            const input = document.getElementById('twoSumInput').value;
+            const target = parseInt(document.getElementById('targetInput').value);
+            const nums = input.split(',').map(n => parseInt(n.trim()));
+            const viz = document.getElementById('twoSumViz');
+
+            viz.innerHTML = `<div class="step-info">🎯 Target: ${target} | Looking for two numbers that add up to it...</div>`;
+
+            const arrayHTML = '<div class="array-container">' +
+                nums.map((num, i) => `<div class="array-item" id="ts${i}"><span class="array-index">${i}</span>${num}</div>`).join('') +
+                '</div>';
+
+            viz.innerHTML += arrayHTML;
+            viz.innerHTML += '<h3>Hash Map (value → index):</h3><div id="hashMap"></div>';
+
+            const seen = {};
+            let found = false;
+
+            nums.forEach((num, i) => {
+                setTimeout(() => {
+                    const elem = document.getElementById(`ts${i}`);
+                    elem.classList.add('highlight');
+
+                    const complement = target - num;
+
+                    if (complement in seen && !found) {
+                        found = true;
+                        const prevIndex = seen[complement];
+                        document.getElementById(`ts${prevIndex}`).classList.add('found');
+                        elem.classList.add('found');
+                        viz.innerHTML += `<div class="output">✅ Found! indices [${prevIndex}, ${i}]: ${nums[prevIndex]} + ${num} = ${target}</div>`;
+                    } else {
+                        seen[num] = i;
+                    }
+
+                    document.getElementById('hashMap').innerHTML =
+                        '<div class="hash-table">' +
+                        Object.entries(seen).map(([key, value]) =>
+                            `<div class="hash-entry">
+                                <span class="hash-key">${key}</span>
+                                <span class="hash-arrow">→</span>
+                                <span class="hash-value">index ${value}</span>
+                            </div>`
+                        ).join('') +
+                        '</div>';
+
+                    setTimeout(() => elem.classList.remove('highlight'), 500);
+
+                    if (i === nums.length - 1 && !found) {
+                        viz.innerHTML += `<div class="output">❌ No solution found!</div>`;
+                    }
+                }, i * 1000);
+            });
+        }
+
+        // Demo 4: Group Anagrams
+        function groupAnagrams() {
+            const input = document.getElementById('anagramInput').value;
+            const words = input.split(',').map(w => w.trim());
+            const viz = document.getElementById('anagramViz');
+
+            viz.innerHTML = '<div class="step-info">🔤 Grouping anagrams by sorting each word as key...</div>';
+
+            const groups = {};
+
+            words.forEach(word => {
+                const key = word.split('').sort().join('');
+                if (!groups[key]) {
+                    groups[key] = [];
+                }
+                groups[key].push(word);
+            });
+
+            viz.innerHTML += '<h3>Grouping Process:</h3>';
+
+            Object.entries(groups).forEach(([key, group]) => {
+                viz.innerHTML += `
+                    <div class="hash-entry" style="margin-bottom: 15px;">
+                        <span class="hash-key">sorted: "${key}"</span>
+                        <span class="hash-arrow">→</span>
+                        <span class="hash-value">[${group.map(w => `"${w}"`).join(', ')}]</span>
+                    </div>`;
+            });
+
+            viz.innerHTML += `<div class="output">✅ Found ${Object.keys(groups).length} groups of anagrams!</div>`;
+        }
+
+        // Auto-run first demo on load
+        window.onload = () => {
+            detectDuplicates();
+        };
+    </script>
+</body>
+</html>
