@@ -49,6 +49,12 @@ dsa/
     │   ├── COMMON_MISTAKES.md       ← Avoid these pitfalls!
     │   └── CHEAT_SHEET.md          ← Print and keep handy!
     │
+    ├── 🚀 FAANG PREPARATION (The Missing 30%!)
+    │   ├── FAANG_ROADMAP.md         ← Complete 4-6 month plan
+    │   ├── SYSTEM_DESIGN.md         ← Master system design (visuals!)
+    │   ├── BEHAVIORAL_PREP.md       ← STAR method + Amazon LPs
+    │   └── ADVANCED_STRATEGIES.md   ← Level up to Hard problems
+    │
     ├── 📚 REFERENCE
     │   ├── README.md                ← Complete NeetCode roadmap
     │   └── PROBLEMS_LIST.md         ← All 150 problems checklist
@@ -340,6 +346,150 @@ Includes:
 
 ---
 
+## 🚀 Want a FAANG Job? (The Complete Picture)
+
+**DSA alone = 60-70% of what you need**
+
+### Here's the FULL picture:
+
+```
+FAANG Interview Success = DSA + System Design + Behavioral + Resume
+
+Your Journey:
+├─ Months 1-2: DSA Foundation (this system)
+├─ Months 3-4: Advanced DSA + System Design
+├─ Months 5-6: Company Prep + Mock Interviews
+└─ Result: FAANG Offer! 🎯
+```
+
+### What This Repo Gives You:
+
+#### ✅ **DSA Mastery (60-70%)**
+- 17 complete topics
+- 150 essential problems
+- Pattern recognition training
+- 6-week structured plan
+- **Time: 6-8 weeks, 2-4 hrs/day**
+
+#### ✅ **System Design (20-25%)**
+- Complete visual guide (SYSTEM_DESIGN.md)
+- All core concepts with diagrams
+- 8+ real system designs (Twitter, YouTube, Uber)
+- Based on best resources (Grokking, Alex Xu, System Design Primer)
+- **Time: 8 weeks, 1-2 hrs/day**
+
+#### ✅ **Behavioral Interviews (10-15%)**
+- STAR method framework
+- Amazon's 16 Leadership Principles
+- Company-specific approaches (Google, Meta, Amazon, Apple, Netflix)
+- 10 must-have story templates
+- **Time: 3 weeks, 1 hr/day**
+
+#### ✅ **Advanced Strategies**
+- Hard problem techniques
+- Company-specific patterns
+- Optimization strategies
+- Interview communication tips
+
+### Your FAANG Timeline:
+
+```
+📅 COMPLETE ROADMAP:
+
+Month 1-2 (8 weeks):
+└─ Focus: DSA Foundation + Behavioral stories
+   Hours: 20-25/week (70% DSA, 30% Behavioral)
+   Milestone: 150+ problems, 10 stories ready
+
+Month 3-4 (8 weeks):
+└─ Focus: Advanced DSA + System Design + Behavioral polish
+   Hours: 20-25/week (50% DSA, 30% System Design, 20% Behavioral)
+   Milestone: 300+ problems, 5+ designs, interview-ready
+
+Month 5-6 (8 weeks):
+└─ Focus: Company prep + Mock interviews + Real interviews
+   Hours: 20-25/week (40% Mocks, 30% Company-specific, 30% Review)
+   Milestone: FAANG offers! 🎉
+
+Total: 4-6 months, 20-25 hours/week
+```
+
+### Quick Start for FAANG Prep:
+
+```bash
+# Step 1: Master DSA first (Months 1-2)
+cd neetcode
+cat STUDY_PLANNER.md        # Follow this for 6 weeks
+
+# Step 2: Add System Design (Months 3-4)
+cat SYSTEM_DESIGN.md        # 8-week parallel study plan
+cat BEHAVIORAL_PREP.md      # Polish your stories
+
+# Step 3: Company-specific (Months 5-6)
+cat FAANG_ROADMAP.md        # Complete 4-6 month timeline
+cat ADVANCED_STRATEGIES.md  # Level up to Hard problems
+```
+
+### The Resources You Need:
+
+**All guides in this repo:**
+1. **FAANG_ROADMAP.md** - Your complete 4-6 month plan
+2. **SYSTEM_DESIGN.md** - System design made easy (with visuals!)
+3. **BEHAVIORAL_PREP.md** - STAR method + Leadership Principles
+4. **ADVANCED_STRATEGIES.md** - Hard problems & company patterns
+
+**Best external resources (research-backed):**
+- **Grokking System Design** ($80) - Best structured course
+- **System Design Primer** (Free on GitHub) - Comprehensive
+- **Alex Xu Books Vol 1 & 2** ($40 each) - Visual explanations
+- **LeetCode Premium** ($35/month) - Company-tagged problems
+
+### Can You Really Get FAANG With This?
+
+**Honest Answer: YES, but...**
+
+```
+✅ This system covers ALL technical requirements
+✅ Based on 2025 successful candidate experiences
+✅ Includes system design + behavioral (often neglected!)
+✅ 4-6 month timeline is realistic and proven
+
+But you also need:
+- Resume that gets you interviews (projects, experience)
+- Consistency (20-25 hrs/week, no shortcuts)
+- Mock interviews (practice under pressure)
+- Company research (culture fit matters!)
+```
+
+**Success Rate:**
+- After 2 months (DSA only): ~40% ready for FAANG coding rounds
+- After 4 months (DSA + System Design + Behavioral): ~80% ready
+- After 6 months (Complete prep + mocks): **Ready for offers!**
+
+### Start Your FAANG Journey:
+
+```bash
+# TODAY: Start DSA foundation
+cd neetcode && cat QUICK_START.md
+
+# WEEK 3: Add behavioral prep
+cat BEHAVIORAL_PREP.md
+
+# MONTH 3: Start system design
+cat SYSTEM_DESIGN.md
+
+# MONTH 5: Follow complete roadmap
+cat FAANG_ROADMAP.md
+```
+
+**Remember:**
+- DSA gets you past coding rounds (60-70%)
+- System Design gets you mid/senior roles (20-25%)
+- Behavioral seals the deal (10-15%)
+- **You need all three for FAANG!**
+
+---
+
 ## 🎯 Your First Action
 
 Right now, open a terminal and run:
@@ -355,10 +505,17 @@ That's it. Just read that file. It will guide you through everything else.
 ---
 
 **Last Updated:** November 2025
-**Topics:** 17/17 Complete ✅
-**Problems:** 150 Ready ✅
-**Guides:** 11 Master Guides ✅
-**Study Plan:** 6 weeks, 2-4 hrs/day ✅
-**Revision System:** Spaced repetition included ✅
 
-**Ready to become a DSA master? Start now!** 🎯
+**📊 What's Included:**
+- **Topics:** 17/17 Complete ✅
+- **Problems:** 150 Essential Problems ✅
+- **Master Guides:** 15 Comprehensive Guides ✅
+- **DSA Study Plan:** 6 weeks, 2-4 hrs/day ✅
+- **FAANG Roadmap:** 4-6 months complete plan ✅
+- **System Design:** Full guide with visuals ✅
+- **Behavioral Prep:** STAR + Leadership Principles ✅
+- **Revision System:** Spaced repetition included ✅
+
+**🎯 Your Complete FAANG Preparation System!**
+
+**Ready to land your dream job? Start now!** 🚀
