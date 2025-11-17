@@ -35,6 +35,7 @@ dsa/
 └── neetcode/              🎯 ALL YOUR LEARNING IS HERE
     │
     ├── 📁 00-getting-started/    (START HERE!)
+    │   ├── PYTHON_ESSENTIALS.md     ← Python basics for DSA (2-3 days) 🐍
     │   ├── ABSOLUTE_BEGINNER.md     ← Never done DSA? Start here!
     │   ├── QUICK_START.md           ← Your roadmap (read first!)
     │   ├── PATTERN_RECOGNITION.md   ← Learn to identify patterns
@@ -86,6 +87,24 @@ archive/               📦 Your old practice (saved for reference)
 ---
 
 ## 🎯 Complete Beginner? Start Here!
+
+### Phase 0: Python Basics (Optional - If Needed)
+
+**New to Python or rusty on basics?**
+```bash
+# Spend 2-3 days here first!
+cat 00-getting-started/PYTHON_ESSENTIALS.md
+
+Topics covered:
+✅ Lists, Dicts, Sets (essential!)
+✅ List comprehensions
+✅ Common operations & time complexity
+✅ heapq, deque, defaultdict
+✅ DSA-specific Python patterns
+✅ Interview tricks & common mistakes
+
+Don't spend more than 3 days here - learn by doing!
+```
 
 ### Phase 1: Learn the System (Day 1 - 2 hours)
 
@@ -519,7 +538,8 @@ That's it. Just read that file. It will guide you through everything else.
 **📊 What's Included:**
 - **Topics:** 17/17 Complete ✅
 - **Problems:** 150 Essential Problems ✅
-- **Master Guides:** 17 Comprehensive Guides ✅
+- **Master Guides:** 18 Comprehensive Guides ✅
+- **Python Essentials:** Complete DSA-focused Python guide 🐍
 - **DSA Study Plan:** 6 weeks, 2-4 hrs/day ✅
 - **FAANG Roadmap:** 4-6 months complete plan ✅
 - **System Design:** Full guide with visuals ✅
