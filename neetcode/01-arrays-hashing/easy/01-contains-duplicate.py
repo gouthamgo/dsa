@@ -3,6 +3,112 @@ Problem: Contains Duplicate
 Difficulty: Easy
 Topics: Array, Hash Table
 
+============================================================================
+🧠 HOW TO THINK ABOUT THIS PROBLEM
+============================================================================
+
+STEP 1: UNDERSTAND (30 seconds)
+--------------------------------
+Read: "Check if any value appears twice in array"
+
+Rephrase in your words: "I need to find if there's a duplicate number"
+
+Input: List of numbers [1, 2, 3, 1]
+Output: true or false
+Question: Is there ANY number that appears more than once?
+
+STEP 2: SMALL EXAMPLE (1 minute)
+---------------------------------
+Let's trace by hand with [1, 2, 3, 1]:
+
+Check 1: Haven't seen it before ✓
+Check 2: Haven't seen it before ✓
+Check 3: Haven't seen it before ✓
+Check 1: Wait! I've seen 1 before! → DUPLICATE! ✓
+
+How did MY BRAIN do this?
+→ I REMEMBERED what I'd seen before
+→ That's a HASH SET!
+
+Visual:
+  [1, 2, 3, 1]
+   ↓
+  Check 1 → Remember: {1}
+  Check 2 → Remember: {1, 2}
+  Check 3 → Remember: {1, 2, 3}
+  Check 1 → Already in memory! → Return true
+
+STEP 3: PATTERN RECOGNITION (10 seconds)
+-----------------------------------------
+Keywords: "duplicate", "appears twice", "have I seen this?"
+
+Pattern: HASH SET (existence check)
+
+Why? Need to remember what we've seen → O(1) lookup
+
+STEP 4: BRUTE FORCE (30 seconds)
+---------------------------------
+"Check every number against every other number"
+
+for i in range(len(nums)):
+    for j in range(i+1, len(nums)):
+        if nums[i] == nums[j]:
+            return True
+
+Visual:
+  [1, 2, 3, 1]
+   ↑  ↑  ↑  ↑
+   Compare to all others (n² comparisons!)
+
+Complexity: O(n²) time, O(1) space
+Problem: TOO SLOW for large arrays!
+
+STEP 5: OPTIMIZE (1 minute)
+----------------------------
+Bottleneck: "I keep checking same numbers multiple times"
+
+Solution: "What if I REMEMBER what I've checked?"
+→ Use Hash Set! O(1) lookup
+
+Trade-off:
+- Brute force: O(n²) time, O(1) space
+- Hash set:    O(n) time,  O(n) space
+→ Trade space for speed! ✓
+
+STEP 6: WALK THROUGH (1 minute)
+--------------------------------
+Input: [1, 2, 3, 1]
+
+seen = {}
+
+Step 1: Check 1
+  - Is 1 in seen? NO
+  - Add 1 to seen = {1}
+
+Step 2: Check 2
+  - Is 2 in seen? NO
+  - Add 2 to seen = {1, 2}
+
+Step 3: Check 3
+  - Is 3 in seen? NO
+  - Add 3 to seen = {1, 2, 3}
+
+Step 4: Check 1
+  - Is 1 in seen? YES! ✓
+  - Return True
+
+COMPLEXITY ANALYSIS:
+--------------------
+Time: O(n) - single pass through array
+  - Each lookup: O(1)
+  - n lookups: O(n)
+
+Space: O(n) - hash set stores up to n elements
+  - Worst case: all unique → store all n
+  - Best case: duplicate found early → store few
+
+============================================================================
+
 Problem Statement:
 -----------------
 Given an integer array nums, return true if any value appears at least twice
