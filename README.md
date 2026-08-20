@@ -63,6 +63,16 @@ dsa/
     │   └── PROBLEMS_LIST.md         ← All 150 problems checklist
     │
     └── 🎓 17 TOPICS (Complete & Ready)
+        │
+        │   Every topic folder contains:
+        │     GUIDE.md      ← the pattern explained, with traced examples
+        │     template.py   ← reusable code patterns to copy from
+        │     easy/         ← worked solutions (where present)
+        │     medium/       ← worked solutions (where present)
+        │
+        │   Every solution file runs standalone — `python3 <file>` executes
+        │   its tests and prints a step-by-step visual trace.
+        │
         ├── 01-arrays-hashing/       ← Start here!
         ├── 02-two-pointers/
         ├── 03-stack/
